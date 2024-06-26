@@ -31,4 +31,8 @@ public class Employee {
     @JoinColumn(name= "dept_id")
     private Department department;
 
+    public void changeDepartment(Department department) {
+        this.department = department;
+        department.getEmployees().add(this);
+    }
 }

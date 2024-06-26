@@ -3,10 +3,12 @@ package com.spring.jpastudy.chap04_relation.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
-@ToString
+@ToString(exclude = "employees")
 @EqualsAndHashCode(of ="id")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +23,9 @@ public class Department {
 
     @Column(name = "dept_name", nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees = new ArrayList<>();
 
 
 }
