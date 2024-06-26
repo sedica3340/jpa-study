@@ -6,7 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 
 
-@Setter @Getter @ToString
+@Setter @Getter
+@ToString(exclude = "department")
 @EqualsAndHashCode(of ="id")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,9 +27,8 @@ public class Employee {
 
     // 단방향 매핑 - 데이터베이스처럼 한쪽에 상대방의 PK를 FK로 갖는 형태
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "dept_id")
     private Department department;
-
 
 }
