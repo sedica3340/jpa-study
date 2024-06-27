@@ -25,6 +25,7 @@ public class User {
     @Column(name = "user_name")
     private String name;
 
+    @Builder.Default
     @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
     private List<Purchase> purchaseList = new ArrayList<>();
 }
