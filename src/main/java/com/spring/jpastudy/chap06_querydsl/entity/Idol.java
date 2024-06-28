@@ -5,10 +5,10 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "tbl_idol")
 @Setter @Getter
 @ToString(exclude = "group")
 @EqualsAndHashCode(of = "id")
-@Table(name = "tbl_idol")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Idol {
 
@@ -33,7 +33,6 @@ public class Idol {
             changeGroup(group);
         }
     }
-
 
     public void changeGroup(Group group) {
         this.group = group;

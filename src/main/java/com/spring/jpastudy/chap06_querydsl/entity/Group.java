@@ -9,8 +9,8 @@ import java.util.List;
 @Entity
 @Setter @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EqualsAndHashCode(of = "id")
 @ToString(exclude = {"idols"})
+@EqualsAndHashCode(of = "id")
 @Table(name = "tbl_group")
 public class Group {
 
